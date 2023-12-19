@@ -1,3 +1,4 @@
+//@ts-ignore
 import { createStore } from "vuex";
 
 // Create a new store instance.
@@ -17,20 +18,20 @@ const store = createStore({
     };
   },
   getters: {
-    notifications(state) {
+    notifications(state: any) {
       return state.notifications;
     },
   },
   mutations: {
-    updateNotifications(state, payload) {
+    updateNotifications(state: any, payload: any) {
       state.notifications = payload;
     },
   },
   actions: {
-    change(state, payload) {
+    change(state: any, payload: any) {
       state.commit("updateNotifications", payload);
     },
-    add(state, payload) {
+    add(state: any, payload: any) {
       state.commit("updateNotifications", [
         ...state.state.notifications,
         payload,
